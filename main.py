@@ -52,7 +52,7 @@ for i in routesStand:
         parking=parkingsStand[nowParking].split(" ")
         print("PSEUDOPILOT:ALL")
         print("@N:%s:0000:1:%s:%s:%s:0:0:0"%(info[1],parking[1],parking[2],str(AIRPORT_ALT)))
-        print("$FP%s:*A:I:%s:400:%s:0000:0000:%d:%s:00:00:0:0::/v/0225 SimGen Aircraft:%s"%(info[1],info[2],DEP_AIRPORT,convertFL2FT(info[4]),info[0],info[3].replace("(","").replace(")","")))
+        print("$FP%s:*A:I:%s:400:%s:0000:0000:%d:%s:00:00:0:0::/v/:%s"%(info[1],info[2],DEP_AIRPORT,convertFL2FT(info[4]),info[0],info[3].replace("(","").replace(")","")))
         r=info[3].replace("(","").replace(")","").split(" ")
         route=""
         '''
@@ -75,7 +75,7 @@ for i in appStand:
     info = splitR(i)
     print("PSEUDOPILOT:ALL")
     print("@N:%s:0000:1:%s:%s:0:0:0"%(info[0],info[2],str(info[1])))
-    print("$FP%s:*A:I:%s:400:%s:0000:0000:%d:%s:00:00:0:0::/v/0225 SimGen Aircraft:%s"%(info[0],info[-1],info[5],convertFL2FT(info[6]),"ZGGG","NULL"))
+    print("$FP%s:*A:I:%s:400:%s:0000:0000:%d:%s:00:00:0:0::/v/:%s"%(info[0],info[-1],info[5],convertFL2FT(info[6]),"ZGGG","NULL"))
     print("$ROUTE:%s"%info[4].replace("(","").replace(")",""))
     print("DELAY:1:2")
     print("REQALT::4900")
